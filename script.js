@@ -1,6 +1,6 @@
 // Create a div container w/ squares inside
 
-const gridSize = 5;
+let gridSize = 5;
 
 const container = document.querySelector("#square-grid");
 container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
@@ -23,7 +23,7 @@ function randomNumber() {
 
 function randomHexColor() {
   let color = "#";
-  for (let i = 0; i < 6; i++) {
+  for (let indx = 0; indx < 6; ++indx) {
     color += colorHex[randomNumber()];
   }
   return color;
@@ -39,6 +39,12 @@ squares.forEach((square) => {
 });
 
 // A clear-current-grid button
+const cleanButton = document.querySelector("#clean-btn");
+cleanButton.addEventListener("click", () => {
+  squares.forEach((square) => {
+    square.style.backgroundColor = "black";
+  });
+});
 
 // Change the number of squares per side of the grid
 
