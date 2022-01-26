@@ -1,7 +1,7 @@
 // Create a div container w/ squares inside
 
 let gridSize = 16;
-const container = document.querySelector("#square-grid");
+const defaultColor = "#065471";
 
 function generateGrid(container, gridSize) {
   container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
@@ -11,6 +11,7 @@ function generateGrid(container, gridSize) {
     const square = document.createElement("div");
     square.setAttribute("id", indx);
     square.classList.add("square");
+    square.style.backgroundColor = defaultColor;
     container.appendChild(square);
   }
 }
@@ -40,6 +41,7 @@ function colorize() {
 }
 
 // Start
+const container = document.querySelector("#square-grid");
 generateGrid(container, gridSize);
 colorize();
 
@@ -48,13 +50,13 @@ const cleanButton = document.querySelector("#clean-btn");
 cleanButton.addEventListener("click", () => {
   const squares = document.querySelectorAll(".square");
   squares.forEach((square) => {
-    square.style.backgroundColor = "black";
+    square.style.backgroundColor = defaultColor;
   });
 
   // Change the number of squares per side of the grid
   let gridSize = window.prompt(
     "Enter the number of squares per side for the new grid:",
-    16
+    64
   );
   while (gridSize >= 100) {
     gridSize = window.prompt("Please choose a maximum of 100!", 16);

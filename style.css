@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin&family=Montagu+Slab:wght@400;700&family=Sigmar+One&display=swap');
+
+body {
+  background-color: #0C2233;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  gap: 1em;
+  font-family: 'M PLUS Code Latin', sans-serif;
+}
+
 #square-grid {
   display: grid;
   gap: 0.1em;
@@ -9,5 +23,21 @@
   width: 100%;
   height: 100%;
   border-radius: 0.2em;
-  background-color: black;
+  /* background-color: rgb(48, 56, 65); */
+}
+
+button {
+  background: #0A91AB;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.5em;
+  color: #0C2233;
+  font-size: large;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #FFC045;
+
 }
